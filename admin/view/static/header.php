@@ -64,32 +64,28 @@
 <!--sidebar-->
 <div class="sidebar">
 
+    <?php echo route(1);?>
+
     <ul>
-        <?php foreach ($menus as $menu):?>
-        <li>
-            <a href="#">
-                <span class="fa fa-plug"></span>
+        <?php foreach ($menus as $mainUrl => $menu):?>
+        <li class="<?= (route(1) == $mainUrl) || isset($menu["submenu"][route(1)]) ? "active" : null ?>">
+            <a href="<?= admin_url($mainUrl)?>">
+                <span class="fa fa-<?= $menu["icon"]?>"></span>
                 <span class="title">
-                    Plugins
+                    <?= $menu["title"]?>
                 </span>
             </a>
+            <?php if (isset($menu["submenu"])):?>
             <ul class="sub-menu">
+                <?php foreach ($menu["submenu"] as $url => $title):?>
                 <li>
-                    <a href="#">
-                        Installed Plugins
+                    <a href="<?= admin_url($url)?>">
+                        <?=$title?>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        Add New
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Editor
-                    </a>
-                </li>
+               <?php endforeach;?>
             </ul>
+            <?php endif;?>
         </li>
     <?php endforeach;?>
     </ul>
