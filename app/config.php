@@ -2,7 +2,7 @@
 //path al
 define("PATH",realpath("."));
 define("SUBFOLDER", true);
-define("URL", "http://localhost/cms");
+define("URL", "http://localhost:81/cms");
 
 //db bağlantısı
 return [

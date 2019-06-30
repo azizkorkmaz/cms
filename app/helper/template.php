@@ -7,6 +7,17 @@ function site_url($url = false)
 
 function public_url($url = false)
 {
-    return URL ."/public/" .$url;
+    return URL ."/public/" .setting("theme") ."/" .$url;
 }
 
+function is_error()
+{
+    global $error;
+    return isset($error) ? $error : false;
+}
+
+function is_success()
+{
+    global $success;
+    return isset($success) ? $success : false;
+}

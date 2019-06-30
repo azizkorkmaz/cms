@@ -2,7 +2,6 @@
 
 session_start();
 ob_start();
-//error_reporting(E_ALL);
 
 //otomatik olarak class ları yükle
 function loadClasses($className)
@@ -23,6 +22,9 @@ catch (PDOException $ex)
 {
     die($ex->getMessage());
 }
+
+//settings sayfasını dahil et
+require __DIR__ ."/settings.php";
 
 //helper klasörünü yükle
 foreach (glob( __DIR__ ."/helper/*.php") as $helperFile)

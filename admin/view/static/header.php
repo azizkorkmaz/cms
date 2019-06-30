@@ -9,6 +9,7 @@
 
     <!--styles-->
     <link rel="stylesheet" href="<?= admin_public_url('styles/main.css')?>">
+    <!--<link rel="stylesheet" href="<?/*= public_url('styles/main.css')*/?>">-->
 
     <!--scripts-->
     <script src="<?=admin_public_url('scripts/jquery-1.12.2.min.js')?>"></script>
@@ -25,7 +26,7 @@
             <a href="#">
                 <span class="fa fa-home"></span>
                 <span class="title">
-                    ANOTHER WORDPRESS SITE
+                    ANOTHER WORDPRESS SITE <br> <?= admin_public_url('styles/main.css')?>
                 </span>
             </a>
         </li>
